@@ -8,7 +8,7 @@
 		<action name="Login" class="com.fly.action.login.LoginAction">
 
 			<result name="error">/error.html</result>
-			<result name="success">/welcome.html</result>
+			<result name="success">/testVm.vm</result>
 			
 		</action>
 
