@@ -63,6 +63,18 @@
 			<version>1.6.3</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
+<dependency>
+  <groupId>velocity</groupId>
+  <artifactId>velocity-dep</artifactId>
+  <version>1.5</version>
+</dependency>
+		
 		<!-- Spring  -->
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
