@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "/spring-beans.dtd">
+<beans default-autowire="byName">
+	<bean id="sqlExecutor" class="com.koubei.persistence.ext.LimitSqlExecutor">
+		<property name="dialect">
+		<bean class="com.koubei.persistence.dialect.MySQLDialect" />
+		</property>
+	</bean>
+	<!-- client sqlMapClient配置 以后可以考虑将dataSource拿进来，yutong-->
+	<bean id="clientSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="sqlmapconfig.xml" />
+		<property name="dataSource" ref="clientDataSource" />
+	</bean>
+	<bean id="clientReadOnlySqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="sqlmapconfig.xml" />
+		<property name="dataSource" ref="clientReadOnlyDataSource" />
+	</bean>
+
+	<bean id="clientSessionManager" class="com.fly.persistence.SessionManager">
+		<property name="sqlExecutor">
+			<ref bean="sqlExecutor" />
+		</property>
+		<property name="sessions">
+		<map>
+			<entry key="read">
+				<ref local="clientReadOnlySqlMapClient" />
+			</entry>
+			<entry key="write">
+				<ref local="clientSqlMapClient" />
+			</entry> 
+		</map>
+		</property>
+	</bean>
+</beans>
