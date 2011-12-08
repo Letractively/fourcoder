@@ -2,8 +2,7 @@
 　　<HEAD> 
 　　<TITLE>Search</TITLE> 
 　　</HEAD> 
-　　<BODY> 
-　　$!errors.msgs()||(1) 
+　　<BODY> 　　
 　　<FORM method="POST" 
 　　action="$link.setAction('/search')"> |(2) 
 　　<h2>Book Search</h2> 
