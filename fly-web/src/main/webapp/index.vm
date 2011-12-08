@@ -1,0 +1,8 @@
+    <html>  
+    <body>  
+    <form action="HelloWorld">  
+        <input type="text" name="userName"/>  
+        <input type="submit" value="Ìá½»" />  
+    </form>  
+    </body>  
+    </html>  
