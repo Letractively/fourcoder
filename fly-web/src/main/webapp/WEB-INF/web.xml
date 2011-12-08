@@ -21,7 +21,7 @@ com/xml/ns/j2ee/web-app_2_4.xsd">
 		
 		<init-param>
 			<param-name>org.apache.velocity.toolbox</param-name> 
-			<param-value>toolbox.xml</param-value> 
+			<param-value>toolbox.xml</param-value>
 		</init-param> 
 		
 		<load-on-startup>10</load-on-startup>

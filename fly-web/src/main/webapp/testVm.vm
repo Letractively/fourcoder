@@ -1,13 +1,8 @@
 　　<HTML> 
 　　<HEAD> 
-　　<TITLE>Search</TITLE> 
+　　<TITLE>Good</TITLE> 
 　　</HEAD> 
 　　<BODY> 　　
-　　<FORM method="POST" 
-　　action="$link.setAction('/search')"> |(2) 
-　　<h2>Book Search</h2> 
-　　ISBN:<INPUT type="text" name="isbn"> 
-　　<INPUT type="submit" value="Submit" name="submit"> 
-　　</FORM> 
+Good
 　　</BODY> 
 　　</HTML> 
