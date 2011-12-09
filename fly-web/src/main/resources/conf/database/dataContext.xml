@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "/spring-beans.dtd">
+<beans default-autowire="byName">
+
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+	  <!-- 此处应注入ibatis配置文件，而非sqlMap文件，否则会出现“there is no statement.....异常” -->
+	  <property name="configLocation">
+		 <value>sqlmapconfig.xml</value>
+	  </property>
+	</bean>
+
+	<bean id="testDAO" class="ch10.SpringAndIbatis.TestDAO">
+	   <property name="dataSource">
+	   <ref bean="dataSource"/>
+	 </property>
+	  <property name="sqlMapClient">
+		<ref bean="sqlMapClient"/>
+	  </property>
+	</bean>
+</beans>

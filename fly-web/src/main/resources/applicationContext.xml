@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "/spring-beans.dtd"><beans default-autowire="byName">	<import resource="conf/dataSource.xml" />	<import resource="conf/dataContext.xml"/></beans>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "/spring-beans.dtd"><beans default-autowire="byName">	<import resource="conf/database/dataSource.xml" />	<import resource="conf/database/dataContext.xml"/></beans>
