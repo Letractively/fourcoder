@@ -2,7 +2,6 @@ package com.fly.biz.common.model.category;
 
 import java.util.Date;
 
-import com.fly.biz.common.model.base.BaseDO;
 
 /**
  * Category
@@ -10,7 +9,7 @@ import com.fly.biz.common.model.base.BaseDO;
  *
  */
 
-public class CategoryDO extends BaseDO{
+public class CategoryDO{
 
 	private long catId;//类目ID
 	private String catName;//类目名称
