@@ -18,30 +18,28 @@
   
   <dependencies>
   
-	<dependency>
-		<groupId>com.fly.biz</groupId>
-		<artifactId>fly-biz</artifactId>
-		<version>${version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring</artifactId>
-		<version>2.5.6</version>
-	</dependency>
+		<dependency>
+			<groupId>com.fly.biz</groupId>
+			<artifactId>fly-biz</artifactId>
+			<version>${version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.5.6</version>
+		</dependency>
 	
-
-
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
 			<version>${struts2.version}</version>
 		</dependency>
 
-<dependency>
-	<groupId>javassist</groupId>
-	<artifactId>javassist</artifactId>
-	<version>3.8.0.GA</version>
-</dependency>
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.8.0.GA</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>log4j</groupId>
@@ -69,11 +67,11 @@
 			<version>1.4</version>
 		</dependency>
 		
-<dependency>
-  <groupId>velocity</groupId>
-  <artifactId>velocity-dep</artifactId>
-  <version>1.5</version>
-</dependency>
+		<dependency>
+		  <groupId>velocity</groupId>
+		  <artifactId>velocity-dep</artifactId>
+		  <version>1.5</version>
+		</dependency>
 		
 		<!-- Spring  -->
 		<dependency>
@@ -87,13 +85,13 @@
 			<version>1.5.8</version>
 			<scope>runtime</scope>
 		</dependency>
-	
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+		
+		<dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>3.8.1</version>
+		  <scope>test</scope>
+		</dependency>
   </dependencies>
   <build>
     <finalName>fly-web</finalName>

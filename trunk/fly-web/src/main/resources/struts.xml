@@ -7,10 +7,10 @@
 	<package name="default" extends="struts-default">
 		<action name="Login" class="com.fly.action.login.LoginAction">
 			<result name="error">/error.html</result>
-			<result name="success">/testVm.vm</result>			
+			<result name="success">/vm/testVm.vm</result>			
 		</action>
 		<action name="HelloWorld" class="com.fly.test.HelloWorld">  
-        	<result name="SUCCESS">/success.vm</result>  
+        	<result name="SUCCESS">/vm/success.vm</result>
     	</action> 
 	</package>
 </struts>
