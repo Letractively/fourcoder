@@ -12,35 +12,40 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO{
 	@SuppressWarnings("unchecked")
 	public List<UserDO> getList() {
 
-		 return getSqlMapClientTemplate().queryForList("getAllUsers",null);
+		return getSqlMapClientTemplate().queryForList("getAllUsers",null);
 	}
 
-	public UserDO getByName(String name) {
+	public UserDO getByName(String userName) {
 
-		   return (UserDO)getSqlMapClientTemplate().queryForObject("getUsersByName",name);
+		return (UserDO)getSqlMapClientTemplate().queryForObject("UserDAO.getUserByName",userName);
 	}
 
-	public UserDO getById(String id) {
+	public UserDO getById(long userId) {
 		
-		 return (UserDO)getSqlMapClientTemplate().queryForObject("getUsersById",id);
+		 return (UserDO)getSqlMapClientTemplate().queryForObject("UserDAO.getUserById",userId);
 	}
 
-	public void save(UserDO user) {
+	public void saveUser(UserDO user) {
 
-		 getSqlMapClientTemplate().insert("insertUsers",user);
-		
-	}
-
-	public void delete(long id) {
-
-		  getSqlMapClientTemplate().delete("deleteUsers", id);
+		this.getSqlMapClientTemplate().insert("UserDAO.insertUser",user);
 		
 	}
 
-	public void update(UserDO user) {
+	public void deleteUser(long userId) {
 
-		  getSqlMapClientTemplate().update("updateUsers", user);
+		this.getSqlMapClientTemplate().delete("UserDAO.deleteUser", userId);
 		
+	}
+
+	public void updateUser(UserDO user) {
+
+		this.getSqlMapClientTemplate().update("UserDAO.updateUser", user);
+		
+	}
+
+	public List<UserDO> getAllUserList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -4,18 +4,20 @@ import java.util.List;
 
 import com.fly.biz.common.model.user.UserDO;
 
+
+
 public interface UserDAO {
 
-	  public List<UserDO> getList();
+	  public List<UserDO> getAllUserList();
 	  
-	  public UserDO getByName(String name);
+	  public UserDO getByName(String userName);
 	  
-	  public UserDO getById(String id);
+	  public UserDO getById(long userId);
 	  
-	  public void save(UserDO user);
+	  public void saveUser(UserDO user);
 	  
-	  public void delete(long id);
+	  public void deleteUser(long userId);
 	  
-	  public void update(UserDO user);
+	  public void updateUser(UserDO user);
 	
 }

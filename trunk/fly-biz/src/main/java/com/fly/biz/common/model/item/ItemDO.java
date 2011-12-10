@@ -2,9 +2,8 @@ package com.fly.biz.common.model.item;
 
 import java.util.Date;
 
-import com.fly.biz.common.model.base.BaseDO;
 
-public class ItemDO extends BaseDO{
+public class ItemDO{
 
 	
 	private long itemId;//ÉÌÆ·µÄid
