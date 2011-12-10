@@ -5,7 +5,7 @@
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 	  <!-- 此处应注入ibatis配置文件，而非sqlMap文件，否则会出现“there is no statement.....异常” -->
 	  <property name="configLocation">
-		 <value>sqlmapconfig.xml</value>
+		 <value>classpath:/conf/database/sqlmapconfig.xml</value>
 	  </property>
 	</bean>
 
