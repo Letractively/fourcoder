@@ -9,7 +9,7 @@
 	  </property>
 	</bean>
 
-	<bean id="testDAO" class="ch10.SpringAndIbatis.TestDAO">
+	<bean id="userDAO" class="com.fly.biz.dao.user.impl.UserDAOImpl">
 	   <property name="dataSource">
 	   <ref bean="dataSource"/>
 	 </property>
