@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="GBK"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "/spring-beans.dtd">
 <beans default-autowire="byName">
 
@@ -10,36 +10,24 @@
 	</bean>
 
 	<bean id="userDAO" class="com.fly.biz.dao.user.impl.UserDAOImpl">
-		<property name="dataSource">
-				<ref bean="dataSource"/>
-		</property>
 		<property name="sqlMapClient">
 				<ref bean="sqlMapClient"/>
 		</property>
 	</bean>
 	
 	<bean id="adminDAO" class="com.fly.biz.dao.admin.impl.AdminDAOImpl">
-		<property name="dataSource">
-				<ref bean="dataSource"/>
-		</property>
 		<property name="sqlMapClient">
 				<ref bean="sqlMapClient"/>
 		</property>
 	</bean>
 	
 	<bean id="itemDAO" class="com.fly.biz.dao.item.impl.ItemDAOImpl">
-		   <property name="dataSource">
-				<ref bean="dataSource"/>
-		   </property>
 		   <property name="sqlMapClient">
 				<ref bean="sqlMapClient"/>
 		   </property>
 	</bean>
 	
 	<bean id="categoryDAO" class="com.fly.biz.dao.category.impl.CategoryDAOImpl">
-		   <property name="dataSource">
-				<ref bean="dataSource"/>
-		   </property>
 		   <property name="sqlMapClient">
 				<ref bean="sqlMapClient"/>
 		   </property>
