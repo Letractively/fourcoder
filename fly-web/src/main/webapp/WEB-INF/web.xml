@@ -15,7 +15,7 @@ com/xml/ns/j2ee/web-app_2_4.xsd">
  
  <servlet>
         <servlet-name>customerVelocityServlet</servlet-name>
-        <servlet-class>com.fly.test.servlet.CustomerVelocityServlet</servlet-class>
+        <servlet-class>com.fly.common.vmrender.CustomerVelocityServlet</servlet-class>
         <init-param>
             <param-name>org.apache.velocity.properties</param-name>
             <param-value>/WEB-INF/velocity.properties</param-value>
