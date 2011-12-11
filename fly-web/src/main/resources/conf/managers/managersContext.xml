@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+
+	<bean id="adminOperateManager" class="com.fly.biz.manager.admin.impl.AdminOperateManagerImpl">
+	</bean>
+	<bean id="categoryOperateManager" class="com.fly.biz.manager.category.impl.CategoryOperateManagerImpl">
+	</bean>
+	<bean id="itemOperateManager" class="com.fly.biz.manager.item.impl.ItemOperateManagerImpl">
+	</bean>
+	<bean id="userOperateManager" class="com.fly.biz.manager.user.impl.UserOperateManagerImpl">
+	</bean>
+
+</beans>

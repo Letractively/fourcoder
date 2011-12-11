@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+
+	<bean id="adminService" class="com.fly.biz.service.admin.impl.AdminServiceImpl">
+	</bean>
+	<bean id="categoryService" class="com.fly.biz.service.category.impl.CategoryServiceImpl">
+	</bean>
+	<bean id="itemService" class="com.fly.biz.service.item.impl.ItemServiceImpl">
+	</bean>
+	<bean id="userService" class="com.fly.biz.service.user.impl.UserServiceImpl">
+	</bean>
+
+</beans>

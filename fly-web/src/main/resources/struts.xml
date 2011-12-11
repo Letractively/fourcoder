@@ -10,7 +10,7 @@
 			<result name="success">/vm/testVm.vm</result>			
 		</action>
 		<action name="HelloWorld" class="com.fly.test.HelloWorld">  
-        	<result name="SUCCESS">/vm/success.vm</result>
+        	<result name="SUCCESS" type="velocity">/vm/success.vm</result>
     	</action> 
 	</package>
 </struts>
