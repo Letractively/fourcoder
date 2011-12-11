@@ -19,7 +19,7 @@
    <!-- for all other loggers log only info and above log messages -->
      <root>
         <priority value="INFO"/> 
-        <appender-ref ref="STDOUT" /> 
+        <appender-ref ref="appender1" /> 
      </root> 
     
 </log4j:configuration> 
