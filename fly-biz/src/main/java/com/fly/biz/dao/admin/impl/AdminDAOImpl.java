@@ -1,5 +1,6 @@
 package com.fly.biz.dao.admin.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
@@ -14,21 +15,39 @@ public class AdminDAOImpl extends SqlMapClientDaoSupport implements AdminDAO{
 	 */
 	@SuppressWarnings("unchecked")
 	public List<AdminDO> getAdminList() {
-		return this.getSqlMapClientTemplate().queryForList("getAllAdmins",null);
+		try {
+			return this.getSqlMapClientTemplate().getSqlMapClient().queryForList("getAllAdmins",null);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
 	 * 根据管理员名称获取管理员
 	 */
 	public AdminDO getByAdminName(String adminName) {
-		return (AdminDO)this.getSqlMapClientTemplate().queryForObject("AdminDAO.getAdminByName",adminName);
+		try {
+			return (AdminDO)this.getSqlMapClientTemplate().getSqlMapClient().queryForObject("AdminDAO.getAdminByName",adminName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
 	 * 根据ID获取管理员信息
 	 */
 	public AdminDO getByAdminId(String adminId) {
-		return (AdminDO)this.getSqlMapClientTemplate().queryForObject("AdminDAO.getAdminById",adminId);
+		try {
+			return (AdminDO)this.getSqlMapClientTemplate().getSqlMapClient().queryForObject("AdminDAO.getAdminById",adminId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 
 	}
 
@@ -36,21 +55,36 @@ public class AdminDAOImpl extends SqlMapClientDaoSupport implements AdminDAO{
 	 * 保存管理员信息
 	 */
 	public void saveAdmin(AdminDO adminDO) {
-		this.getSqlMapClientTemplate().insert("AdminDAO.insertAdmin",adminDO);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().insert("AdminDAO.insertAdmin",adminDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
 	 * 删除管理员信息
 	 */
 	public void deleteAdmin(long adminId) {
-		this.getSqlMapClientTemplate().delete("AdminDAO.deleteAdmin", adminId);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().delete("AdminDAO.deleteAdmin", adminId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
 	 * 更新管理员信息
 	 */
 	public void updateAdmin(AdminDO adminDO) {
-		this.getSqlMapClientTemplate().update("AdminDAO.updateAdmin", adminDO);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().update("AdminDAO.updateAdmin", adminDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

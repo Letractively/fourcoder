@@ -1,5 +1,6 @@
 package com.fly.biz.dao.user;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.fly.biz.common.model.user.UserDO;
