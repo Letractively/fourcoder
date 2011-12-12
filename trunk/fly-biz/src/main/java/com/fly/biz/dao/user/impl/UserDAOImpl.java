@@ -1,5 +1,6 @@
 package com.fly.biz.dao.user.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
@@ -12,34 +13,67 @@ public class UserDAOImpl extends SqlMapClientDaoSupport implements UserDAO{
 	@SuppressWarnings("unchecked")
 	public List<UserDO> getList() {
 
-		return getSqlMapClientTemplate().queryForList("getAllUsers",null);
+		try {
+			return getSqlMapClientTemplate().getSqlMapClient().queryForList("getAllUsers",null);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public UserDO getByName(String userName) {
 
-		return (UserDO)getSqlMapClientTemplate().queryForObject("UserDAO.getUserByName",userName);
+		try {
+			return (UserDO)getSqlMapClientTemplate().getSqlMapClient().queryForObject("UserDAO.getUserByName",userName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public UserDO getById(long userId) {
 		
-		 return (UserDO)getSqlMapClientTemplate().queryForObject("UserDAO.getUserById",userId);
+		 try {
+			return (UserDO)getSqlMapClientTemplate().getSqlMapClient().queryForObject("UserDAO.getUserById",userId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public void saveUser(UserDO user) {
 
-		this.getSqlMapClientTemplate().insert("UserDAO.insertUser",user);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().insert("UserDAO.insertUser",user);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	public void deleteUser(long userId) {
 
-		this.getSqlMapClientTemplate().delete("UserDAO.deleteUser", userId);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().delete("UserDAO.deleteUser", userId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	public void updateUser(UserDO user) {
 
-		this.getSqlMapClientTemplate().update("UserDAO.updateUser", user);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().update("UserDAO.updateUser", user);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

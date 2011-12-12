@@ -1,5 +1,7 @@
 package com.fly.biz.manager.user.impl;
 
+import java.sql.SQLException;
+
 import com.fly.biz.common.model.result.UserResultDO;
 import com.fly.biz.common.model.user.UserDO;
 import com.fly.biz.dao.user.UserDAO;
@@ -9,7 +11,7 @@ public class UserOperateManagerImpl implements UserOperateManager{
 
 	private UserDAO userDAO;
 	
-	public void insertNewUser(UserDO user) {
+	public void insertNewUser(UserDO user) throws SQLException {
 
 		userDAO.saveUser(user);
 		

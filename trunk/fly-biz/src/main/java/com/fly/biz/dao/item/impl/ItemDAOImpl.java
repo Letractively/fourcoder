@@ -1,5 +1,6 @@
 package com.fly.biz.dao.item.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
@@ -17,7 +18,13 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 */
 	@SuppressWarnings("unchecked")
 	public List<ItemDO> getItemList() {
-		return this.getSqlMapClientTemplate().queryForList("UserDAO.getAllItems",null);
+		try {
+			return this.getSqlMapClientTemplate().getSqlMapClient().queryForList("UserDAO.getAllItems",null);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -26,7 +33,13 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @return
 	 */
 	public ItemDO getByItemName(String itemName) {
-		 return (ItemDO)this.getSqlMapClientTemplate().queryForObject("ItemDAO.getItemByName",itemName);
+		 try {
+			return (ItemDO)this.getSqlMapClientTemplate().getSqlMapClient().queryForObject("ItemDAO.getItemByName",itemName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -35,7 +48,13 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @return
 	 */
 	public ItemDO getByItemId(String itemId) {
-		return (ItemDO)this.getSqlMapClientTemplate().queryForObject("ItemDAO.getItemById",itemId);
+		try {
+			return (ItemDO)this.getSqlMapClientTemplate().getSqlMapClient().queryForObject("ItemDAO.getItemById",itemId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	/**
@@ -43,7 +62,12 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @param itemDO
 	 */
 	public void saveItem(ItemDO itemDO) {
-		 this.getSqlMapClientTemplate().insert("ItemDAO.insertItem",itemDO);
+		 try {
+			this.getSqlMapClientTemplate().getSqlMapClient().insert("ItemDAO.insertItem",itemDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -51,7 +75,12 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @param itemId
 	 */
 	public void deleteItem(long itemId) {
-		this.getSqlMapClientTemplate().delete("ItemDAO.deleteItem", itemId);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().delete("ItemDAO.deleteItem", itemId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -59,7 +88,12 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @param itemDO
 	 */
 	public void updateItem(ItemDO itemDO) {
-		this.getSqlMapClientTemplate().update("ItemDAO.updateItem", itemDO);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().update("ItemDAO.updateItem", itemDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -67,7 +101,12 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @param itemDO
 	 */
 	public void updateItemShareNumber(ItemDO itemDO) {
-		this.getSqlMapClientTemplate().update("ItemDAO.updateItemShareNum", itemDO);		
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().update("ItemDAO.updateItemShareNum", itemDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 
 	/**
@@ -75,7 +114,12 @@ public class ItemDAOImpl extends SqlMapClientDaoSupport implements ItemDAO{
 	 * @param itemDO
 	 */
 	public void updateItemHitnumber(ItemDO itemDO) {
-		this.getSqlMapClientTemplate().update("ItemDAO.updateItemHitNum", itemDO);
+		try {
+			this.getSqlMapClientTemplate().getSqlMapClient().update("ItemDAO.updateItemHitNum", itemDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 

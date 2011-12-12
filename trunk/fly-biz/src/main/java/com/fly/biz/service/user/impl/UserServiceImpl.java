@@ -1,5 +1,7 @@
 package com.fly.biz.service.user.impl;
 
+import java.sql.SQLException;
+
 import com.fly.biz.common.model.result.UserResultDO;
 import com.fly.biz.common.model.user.UserDO;
 import com.fly.biz.manager.user.UserOperateManager;
@@ -13,7 +15,12 @@ public class UserServiceImpl implements UserService{
 
 	public void newUserRegister(UserDO userDO) {
 
-		userOperateManager.insertNewUser(userDO);
+		try {
+			userOperateManager.insertNewUser(userDO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
