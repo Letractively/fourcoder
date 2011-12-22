@@ -1,8 +1,4 @@
 call mvn clean package
-cd  D:\fascinatress\fly-web\target
-del fly-web.war
-ren fly-web fly-web.war
-
-cd  D:\jboss-world\jboss-4.2.2.GA\jboss-4.2.2.GA\bin
-
-call run.bat
+cd  D:\Fly\Test\fly-web\target
+xcopy fly-web D:\java_tools\jboss-4.2.2.GA-HSF\server\default\deploy\fly-web.war /s /e /y /i
+D:\java_tools\jboss-4.2.2.GA-HSF\bin\run.bat
