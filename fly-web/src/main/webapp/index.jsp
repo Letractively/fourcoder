@@ -5,7 +5,7 @@
     </head>
     <body>
     
-            <form action="Login.action" method="post">
+            <form action="login.html" method="post">
                 <table align="center">
                 <caption><h3>four coder for future</h3></caption>
                     <tr>

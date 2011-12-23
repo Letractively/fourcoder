@@ -5,12 +5,9 @@
 <struts>
 
 	<package name="default" extends="struts-default">
-		<action name="Login" class="com.fly.action.login.LoginAction">
-			<result name="error">/error.html</result>
-			<result name="success">/vm/testVm.vm</result>			
+		<action name="login" class="com.fly.action.login.LoginAction">
+			<result name="error">/welcome.html</result>
+			<result name="success" type="velocity">/vm/success.vm</result>		
 		</action>
-		<action name="HelloWorld" class="com.fly.test.HelloWorld">  
-        	<result name="SUCCESS" type="velocity">/vm/success.vm</result>
-    	</action> 
 	</package>
 </struts>
