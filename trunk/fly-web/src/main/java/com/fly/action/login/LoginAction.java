@@ -1,7 +1,15 @@
 package com.fly.action.login;
 
-public class LoginAction{
+import com.fly.common.action.BaseAction;
+import com.fly.common.util.SessionHelper;
+
+public class LoginAction extends BaseAction{
 	
+	/**
+	 * Ìø×ª
+	 */
+	private static final long serialVersionUID = -2841153430630242279L;
+
 	private String username;
 	
 	private String password;
@@ -19,13 +27,21 @@ public class LoginAction{
 		this.password = password;
 	}
 	public String execute() throws Exception{
-		if (getUsername().equals("fourcoder")
-				&& getPassword().equals("tiger") ){
-			return "success";
+		if (getUsername().equals("fourcoder")&& getPassword().equals("tiger") ){
+			
+			SessionHelper sh = new SessionHelper(this.session);
+			
+			if(sh.get("name")==null){
+				sh.put("name", "hengheng");
+				
+				return SUCCESS;
+			}
+			return ERROR;
+
 		}
 		else
 		{
-			return "error";
+			return ERROR;
 		}
 	}
 }
