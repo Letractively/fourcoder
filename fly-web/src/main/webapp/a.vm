@@ -1,0 +1,3 @@
+#foreach( $header in $request.HeaderNames )  
+  <b>$header:</b> $request.getHeader($header)<br>  
+#end 
