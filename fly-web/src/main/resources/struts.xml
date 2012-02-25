@@ -9,5 +9,9 @@
 			<result name="error">/welcome.html</result>
 			<result name="success" type="velocity">/vm/success.vm</result>		
 		</action>
+		<action name="hello" class="com.fly.test.helloWorldAction">
+			<result name="error">/welcome.html</result>
+			<result name="success" type="velocity">/vm/success.vm</result>		
+		</action>
 	</package>
 </struts>

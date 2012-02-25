@@ -3,15 +3,21 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.
 com/xml/ns/j2ee/web-app_2_4.xsd">
+		
+		<!-- ¼ÓÔØ Spring ÈÝÆ÷ÅäÖÃ --> 
+		 <listener>
+				<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		</listener>
+		<!-- ÉèÖÃ Spring ÈÝÆ÷¼ÓÔØÅäÖÃÎÄ¼þÂ·¾¶ --> 
 		<context-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath:applicationContext.xml</param-value>
 		</context-param>
-		<!-- Spring --> 
-		 <listener>
-				<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-		</listener>
+		<!-- ¼ÓÔØ  DWR ÈÝÆ÷ÅäÖÃ -->
 		
+		<listener>
+			<listener-class>org.directwebremoting.servlet.DwrListener</listener-class>
+		</listener>
 		
 		<!-- All the filters starts here-->
 		
@@ -28,8 +34,7 @@ com/xml/ns/j2ee/web-app_2_4.xsd">
 		
 		<servlet>
 			<servlet-name>velocity</servlet-name>
-				<servlet-class>org.apache.velocity.tools.view.VelocityViewServlet
-			</servlet-class>
+				<servlet-class>org.apache.velocity.tools.view.servlet.VelocityViewServlet</servlet-class>
 			<init-param>
 				<param-name>org.apache.velocity.toolbox</param-name>
 				<param-value>/WEB-INF/tools.xml</param-value>
@@ -38,14 +43,32 @@ com/xml/ns/j2ee/web-app_2_4.xsd">
 				<param-name>org.apache.velocity.properties</param-name>
 				<param-value>/WEB-INF/velocity.properties</param-value>
 			</init-param>
+			<load-on-startup>1</load-on-startup>
 		</servlet>
-		
+<servlet>
+    <servlet-name>dwr-invoker</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+        <param-name>debug</param-name>
+        <param-value>true</param-value>
+    </init-param>
+        
+    <!-- dwrµÄcomet¿ØÖÆ -->
+    <init-param>
+      <param-name>pollAndCometEnabled</param-name>
+      <param-value>true</param-value>
+    </init-param>
+</servlet>
 		
 		<!-- Map *.vm files to Velocity -->
 		<servlet-mapping>
 		  <servlet-name>velocity</servlet-name>
 		  <url-pattern>*.vm</url-pattern>
 		</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>dwr-invoker</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+</servlet-mapping>
 		
 		
 		<session-config>
